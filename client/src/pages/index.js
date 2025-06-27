@@ -11,10 +11,11 @@ export default function Home() {
   const [ code, setCode ] = useState('');
   const [ language, setLanguage ] = useState('python');
   const [ output, setOutput ] = useState('');
+  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   const runCode = async () => {
     try{
-      const res = await axios.post('http://localhost:5000/run',{
+      const res = await axios.post(`${BASE_URL}`,{
         code,language
       })
       
