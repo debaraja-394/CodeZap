@@ -1,6 +1,6 @@
 import { Editor } from "@monaco-editor/react"
 
-export default function CodeEditor({ code, setCode, language}){
+export default function CodeEditor({ code, setCode, language, toggle}){
     return(
         <div>
             <Editor 
@@ -8,7 +8,7 @@ export default function CodeEditor({ code, setCode, language}){
                 defaultLanguage={language}
                 value={code}
                 onChange={(value) => setCode(value)}
-                theme="vs-dark"
+                theme={`${ toggle ? 'vs-dark' : 'vs-white'}`}
             />
         </div>
     )

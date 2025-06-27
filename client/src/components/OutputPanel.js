@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function OutputPanel({ output }){
+export default function OutputPanel({ output, toggle }){
     const [ isCopied, setIsCopied ] = useState(false);
     const handleCopy = () => {
         navigator.clipboard.writeText(output || '');
@@ -21,7 +21,7 @@ export default function OutputPanel({ output }){
             { isCopied ? 'Copied!' : 'Copy'}
             </button>
         </div>
-        <div className="relative flex-grow h-48 overflow-y-auto bg-white p-4 font-mono text-sm text-gray-800">
+        <div className={`relative flex-grow h-48 overflow-y-auto ${toggle ? 'bg-black text-white' : 'bg-white text-gray-800'} p-4 font-mono text-sm`}>
                 <pre className="whitespace-pre-wrap">{output || 'Output will appear here'}</pre>
             </div>
       </div> 
