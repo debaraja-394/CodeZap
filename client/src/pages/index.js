@@ -15,7 +15,7 @@ export default function Home() {
 
   const runCode = async () => {
     try{
-      const res = await axios.post(`${BASE_URL}`,{
+      const res = await axios.post(`${BASE_URL}/run`,{
         code,language
       })
       
