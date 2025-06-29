@@ -3,7 +3,7 @@ export default function Navbar({ toggle, setToggle }){
         <header className="w-full sticky top-0 z-50">
             <nav className={`flex justify-between items-center px-6 py-4 bg-${ toggle ? 'black' : 'white'}/70 backdrop-blur-md border-b border-gray-200 shadow-lg rounded-b-2xl`}>
             <i 
-            className={`fa-solid fa-${toggle ? 'toggle-off text-white' : 'toggle-on'} relative top-[10px] z-10 text-3xl cursor-pointer`}
+            className={`fa-solid fa-${toggle ? 'toggle-on text-white' : 'toggle-off'} relative top-[10px] z-10 text-3xl cursor-pointer`}
             onClick={() => setToggle(prev => !prev)}
             ></i>
                 <div className="flex items-center gap-3">
