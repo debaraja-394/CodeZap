@@ -2,7 +2,7 @@ export default function Settings({ editorOptions, setEditorOptions, onClose }){
     return(
         <div className="absolute top-12 right-2 z-20 bg-white/30 backdrop-blur-md border border-white/30  rounded-lg shadow-lg p-4 max-w-md">
             <button
-                className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-lg font-bold"
+                className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-lg font-bold cursor-pointer"
                 onClick={onClose}
                 aria-label="Close"
             >
@@ -73,6 +73,22 @@ export default function Settings({ editorOptions, setEditorOptions, onClose }){
                 <option value="off">Off</option>
                 <option value="wordWrapColumn">Word wrap column</option>
                 <option value="bounded">Bounded</option>
+                </select>
+            </label>
+            <label className="block mb-2">
+                Folding: 
+                <select
+                value={editorOptions.folding}
+                onChange={(e) =>
+                    setEditorOptions((opts) => ({
+                    ...opts,
+                    folding: e.target.value,
+                    }))
+                }
+                className="ml-2 border rounded px-2 py-1"
+                >
+                <option value="true">On</option>
+                <option value="false">Off</option>
                 </select>
             </label>
             {/* Add more settings as needed */}
